@@ -4,13 +4,19 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/',
   server: {
     port: 3000,
     open: true
   },
   build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      }
+    }
   },
   resolve: {
     alias: {
