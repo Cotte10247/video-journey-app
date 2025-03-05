@@ -5,6 +5,14 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: 'index.html'
+      }
+    }
+  },
+  resolve: {
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json']
   }
 }); 
